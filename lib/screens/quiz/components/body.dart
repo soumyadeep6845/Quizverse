@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/constants.dart';
+import 'package:quiz_app/screens/quiz/components/progress_bar.dart';
 import 'package:websafe_svg/websafe_svg.dart';
 
 class Body extends StatelessWidget {
@@ -14,16 +16,19 @@ class Body extends StatelessWidget {
           'assets/images/back_home.svg',
           fit: BoxFit.fill,
         ),
-        Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height: 35,
-              color: Colors.white,
+        SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+            child: Column(
+              children: [
+                ProgressBar(),
+              ],
             ),
-          ],
+          ),
         ),
       ],
     );
   }
 }
+
+
