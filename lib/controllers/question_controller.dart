@@ -19,6 +19,21 @@ class QuestionController extends GetxController
 
   List<Question> get questions => this._questions;
 
+  bool _isAnswered = false;
+  bool get isAnswered => this._isAnswered;
+
+  late int _correctAnswer;
+  int get correctAnswer => this._correctAnswer;
+
+  late int _selectedAnswer;
+  int get selectedAnswer => this._selectedAnswer;
+
+  RxInt _questionNumber = 1.obs;
+  RxInt get questionNumber => this._questionNumber;
+
+  late int _numberOfCorrectAnswers;
+  int get numberOfCorrectAnswers => this._numberOfCorrectAnswers;
+
   @override
   void onInit() {
     _animationController =
@@ -31,5 +46,14 @@ class QuestionController extends GetxController
     _animationController.forward();
 
     super.onInit();
+  }
+
+  void checkAnswer(Question question, int selectedIndex) {
+    _isAnswered = true;
+    _correctAnswer = question.answer;
+    _selectedAnswer = selectedIndex;
+    if (_correctAnswer == _selectedAnswer) _numberOfCorrectAnswers++;
+    _animationController.stop();
+    update();
   }
 }
