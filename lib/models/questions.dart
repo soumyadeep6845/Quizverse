@@ -45,7 +45,7 @@ const List sample_data = [
   },
   {
     'id': 6,
-    'question': '.gif is am extension of?',
+    'question': '.gif is an extension of?',
     'options': ['Word file', 'Audio file', 'Image file', 'Video file'],
     'answer_index': 3,
   },
