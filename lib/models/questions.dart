@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class Question {
   final int id, answer;
   final String question;
@@ -64,7 +62,12 @@ const List sample_data = [
   {
     'id': 9,
     'question': 'Who is also know as the father of Indian Supercomputing?',
-    'options': ['Nandan Nilekani', 'Ragunath Mashelkar', 'Jayant Narlikar', 'Vijay Bhatkar'],
+    'options': [
+      'Nandan Nilekani',
+      'Ragunath Mashelkar',
+      'Jayant Narlikar',
+      'Vijay Bhatkar'
+    ],
     'answer_index': 4,
   },
   {
