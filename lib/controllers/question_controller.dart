@@ -1,4 +1,3 @@
-import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/models/questions.dart';
@@ -11,7 +10,7 @@ class QuestionController extends GetxController
 
   Animation get animation => this._animation;
 
-  late PageController _pageController;
+  PageController _pageController = PageController();
   PageController get pageController => this._pageController;
 
   List<Question> _questions = sample_data
@@ -83,11 +82,9 @@ class QuestionController extends GetxController
       _animationController.reset();
 
       _animationController.forward().whenComplete(nextQuestion);
-    }
-    else {
+    } else {
       Get.to(ScoreScreen());
     }
-    
   }
 
   void updateQuestionNumber(int index) {

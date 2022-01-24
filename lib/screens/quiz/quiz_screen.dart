@@ -14,8 +14,8 @@ class QuizScreen extends StatelessWidget {
         elevation: 0,
         actions: [
           FlatButton(
-            onPressed: _controller.nextQuestion,
             child: Text('Skip'),
+            onPressed: _controller.nextQuestion,
           ),
         ],
       ),
