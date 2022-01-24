@@ -2,6 +2,7 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/models/questions.dart';
+import 'package:quiz_app/screens/score/score_screen.dart';
 
 class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
@@ -83,6 +84,10 @@ class QuestionController extends GetxController
 
       _animationController.forward().whenComplete(nextQuestion);
     }
+    else {
+      Get.to(ScoreScreen());
+    }
+    
   }
 
   void updateQuestionNumber(int index) {
